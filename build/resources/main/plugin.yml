@@ -1,0 +1,8 @@
+main: net.spurkomet.lobbyplugin.InternalMainClass
+name: Lobby-Plugin
+version: 1.4.1
+description: Lobbyplugin for my MCServernetzwerk
+api-version: 1.17
+author: SpurKomet
+libraries:
+  - "net.axay:kspigot:1.17.4"

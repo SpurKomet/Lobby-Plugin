@@ -1,7 +1,13 @@
 package net.spurkomet.lobbyplugin
 
 import net.axay.kspigot.chat.col
+import net.axay.kspigot.commands.register
 import net.axay.kspigot.main.KSpigot
+import net.spurkomet.lobbyplugin.listener.joinListener
+import net.spurkomet.lobbyplugin.listener.quitListener
+import net.spurkomet.lobbyplugin.utils.Fliegen
+import net.spurkomet.lobbyplugin.utils.alowFlight
+import net.spurkomet.lobbyplugin.utils.noDamige
 
 class InternalMainClass : KSpigot() {
 
@@ -14,8 +20,12 @@ class InternalMainClass : KSpigot() {
         INSTANCE = this
     }
     override fun startup() {
+        joinListener()
+        quitListener()
+        alowFlight()
+        noDamige()
+        Fliegen.register()
     }
-
     override fun shutdown() { }
 }
 fun getPrefix(): String{
